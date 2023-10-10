@@ -2,6 +2,7 @@ let miles;
 let gallons;
 let mpg;
 let again = 'y';
+let valid = true;
 
 do {
     miles = parseFloat(prompt('Enter miles driven'));
@@ -12,6 +13,17 @@ do {
     } else {
         alert('One or both entries are invalid.');
     }
-    again = prompt('Run application again? (y or n)', 'y');
+    
+        while (true) {
+            again = prompt('Run application again? (y or n)', 'y')
+            if (again === 'n' || again === 'y') {
+                break;
+            }
+            else {
+                alert("Please enter 'y' or 'n' only");
+                continue;
+            }
+            
+        }
 } while (again === 'y');
 console.log('Application has exited.');
